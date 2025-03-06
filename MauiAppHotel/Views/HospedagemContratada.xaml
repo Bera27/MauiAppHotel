@@ -2,11 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.Views.HospedagemContratada"
-             Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             NavigationPage.HasNavigationBar="False"
+             Background="{StaticResource OffBlack}">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+        <Label Text="Suíte de Luxo" TextColor="#57a6a8" FontFamily="Ponomar" FontSize="50" HorizontalTextAlignment="Center" />
+
+        <Frame Margin="10">
+            <HorizontalStackLayout>
+                
+                <HorizontalStackLayout>
+                    <Label Text="Adultos:" />
+                    <Label Text="2" TextColor="#517a7b" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Crianças:" />
+                    <Label Text="2" TextColor="#517a7b" />
+                </HorizontalStackLayout>
+                
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10">
+            <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Check-in:" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Check-out:" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Estadia:" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="1" />
+                <Label Grid.Row="2" Grid.Column="1" Text="2" />
+                <Label Grid.Row="3" Grid.Column="2" Text="3" />
+
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10">
+            <HorizontalStackLayout>
+                <Label Text="Valor Total:" />
+                <Label Text="R$ 781" />
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar" HorizontalOptions="Center" Clicked="Button_Clicked" />
+
     </VerticalStackLayout>
+    
 </ContentPage>
