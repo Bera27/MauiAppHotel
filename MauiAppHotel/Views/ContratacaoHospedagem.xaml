@@ -4,7 +4,7 @@
              x:Class="MauiAppHotel.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem" NavigationPage.HasNavigationBar="False" BackgroundColor="{StaticResource OffBlack}">
     
-    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10" >
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="10" Spacing="10" >
         <Label 
             Text="Cáculo da diária"
             FontFamily="Ponomar"
@@ -20,30 +20,40 @@
 
                     <Label Grid.Row="0" Grid.Column="1" TextColor="#517a7b" Text="{Binding Value}" BindingContext="{x:Reference stp_adultos}" />
 
-                    <Stepper x:Name="stp_adultos"  Grid.Row="0" Grid.Column="2" Minimum="0" Maximum="4" Increment="1" />
+                    <Stepper x:Name="stp_adultos"  Grid.Row="0" Grid.Column="2" Minimum="0" Maximum="4" 
+                             Increment="1" BackgroundColor="{StaticResource Gray100}" />
 
                     <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" />
 
                     <Label Grid.Row="1" Grid.Column="1" TextColor="#517a7b" Text="{Binding Value}" BindingContext="{x:Reference stp_criancas}" />
 
-                    <Stepper x:Name="stp_criancas" Grid.Row="1" Grid.Column="2" Minimum="0" Maximum="4" Increment="1" />
+                    <Stepper x:Name="stp_criancas" Grid.Row="1" Grid.Column="2" Minimum="0" Maximum="4" 
+                             Increment="1" BackgroundColor="{StaticResource Gray100}"/>
 
                 </Grid>
 
-                <Label Text="Escolha sua Suíte" />
-
-                <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação" ItemDisplayBinding="{Binding Descricao}" />
-
                 <Frame Padding="10" Margin="10">
                     <VerticalStackLayout>
-                        <Label Text="Período da Estadia" />
                         
-                        <HorizontalStackLayout>
+                        <Label Text="Escolha sua Suíte" TextTransform="Uppercase" FontSize="20" TextColor="#517a7b" />
+
+                        <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação" 
+                                ItemDisplayBinding="{Binding Descricao}" BackgroundColor="{StaticResource Gray100}" />
+                        
+                    </VerticalStackLayout>
+                </Frame>
+
+        <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Período da Estadia" TextTransform="Uppercase" FontSize="20" TextColor="#517a7b" />
+                        
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" />
-                            <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" Format="dd/MM/yyyy" />
+                            <DatePicker x:Name="dtpck_checkin" DateSelected="dtpck_checkin_DateSelected" 
+                                        Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-out:" />
                             <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
